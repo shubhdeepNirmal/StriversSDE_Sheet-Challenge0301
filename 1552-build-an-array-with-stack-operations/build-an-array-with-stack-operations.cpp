@@ -2,18 +2,31 @@ class Solution {
 public:
     vector<string> buildArray(vector<int>& target, int n) {
     vector<string> ans;
-    int i=0;
-    for(auto it:target)
+    int m=1;
+
+    for(int i=0;i<target.size();i++)
     {
-        while(i<it-1)
-        {
-          ans.push_back("Push");
-          i++;
-          ans.push_back("Pop");
+        if(target[i]==m){
+            ans.push_back("Push");
+            m++;
         }
-        ans.push_back("Push");
-        i++;
+        else{
+            while(m<target[i])
+            {
+                ans.push_back("Push");
+                ans.push_back("Pop");
+                m++;
+            }
+        }
+
+        if(target[i]==m) {
+            ans.push_back("Push");
+            m++;
+        }
+
     }
-        return ans;
+
+     return ans;
     }
+   
 };
