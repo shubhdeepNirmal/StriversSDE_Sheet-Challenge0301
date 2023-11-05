@@ -11,11 +11,12 @@ public:
             if(k>=n) return maxi;
             int curr=arr[0];
             int streak=0;
-
             for(int i=1;i<n;i++)
             {
                 int opp=arr[i];
-                if(curr>opp)   streak++;
+                if(curr>opp) {
+                    streak++;
+                } 
                 else{
                     curr=opp;
                     streak=1;
