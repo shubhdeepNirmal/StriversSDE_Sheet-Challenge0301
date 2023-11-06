@@ -4,7 +4,6 @@ public:
 
         stack<int>st;
         int maxi=INT_MIN;
-
         st.push(nums[0]);
         for(int i=1;i<nums.size();i++)
         {
