@@ -9,7 +9,11 @@ public:
         } 
         int ans=0;
         while(!hp.empty()){
-            if(ans>=hp.top()) break;
+            
+            if(ans>=hp.top()) {
+                break;
+            }
+
             ans++;
             hp.pop();
         }
