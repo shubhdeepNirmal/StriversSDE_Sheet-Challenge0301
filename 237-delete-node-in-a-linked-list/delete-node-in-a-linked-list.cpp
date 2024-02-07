@@ -13,7 +13,6 @@ public:
         ListNode* dummy= node->next;
         node->val=dummy->val;
         node->next=dummy->next;
-        dummy->next=NULL;
-        delete dummy;
+        
     }
 };
