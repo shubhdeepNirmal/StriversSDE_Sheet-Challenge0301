@@ -13,23 +13,15 @@
 class Solution {
 public:
     vector<vector<int>> findSolution(CustomFunction& customfunction, int z) {
-        
-        vector<vector<int>>ans;
-        for(int x=1;x<1000;x++)
-        {
-            int l=1, r=1000;
-            while(l<r){
-                int mid= l+(r-l)/2;
-                if(customfunction.f(x,mid)>=z){
-                    r=mid;
-                }
-                else{
-                    l=mid+1;
-                }
-            }
-
-            if(customfunction.f(x,l)==z){
-                ans.push_back({x,l});
+        int x=1;
+        int y=1000;
+        vector<vector<int>> ans;
+        while(x<=1000&&y>0){
+            int aa=customfunction.f(x,y);
+            if(aa<z) x++;
+            else if(aa>z) y--;
+            else{
+                ans.push_back({x++,y--});
             }
         }
 
