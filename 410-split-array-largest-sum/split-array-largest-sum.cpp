@@ -19,8 +19,6 @@ public:
     int splitArray(vector<int>& nums, int k) {
         int low= *max_element(nums.begin(),nums.end());
         int high= accumulate(nums.begin(),nums.end(),0);
-
-
         while(low<=high){
             int mid = low+(high-low)/2;
             int part= countpartitions(nums,mid);
@@ -32,8 +30,6 @@ public:
                 high=mid-1;
             }
         }
-       
-     return low;
-        
+     return low; 
     }
 };
