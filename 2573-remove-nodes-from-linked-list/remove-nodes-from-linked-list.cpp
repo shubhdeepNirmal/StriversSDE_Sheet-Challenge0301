@@ -17,12 +17,10 @@ public:
             st.push(temp);
             temp=temp->next;
         }
-
         temp=st.top();
         st.pop();
         int maxi= temp->val;
         head = new ListNode(maxi);
-
         while(!st.empty()){
             temp=st.top();
             st.pop();
