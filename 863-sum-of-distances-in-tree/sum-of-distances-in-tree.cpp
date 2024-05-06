@@ -12,10 +12,7 @@ public:
         graph.resize(N);
         ans.resize(N);
         count.resize(N);
-        subTree.resize(N);
-
-        for (int i = 0; i < N; ++i)
-            graph[i] = vector<int>();
+        subTree.resize(N);        
         
         for (auto& edge : edges) {
             int u = edge[0], v = edge[1];
