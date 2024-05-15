@@ -14,14 +14,11 @@ public:
         if(head==NULL||head->next==NULL){
             return head;
         }
-
         ListNode* nextt= removeNodes(head->next);
-
         if(head->val<nextt->val){
             delete head;
             return nextt;
         }
-
         head->next=nextt;
         return head;
     }
