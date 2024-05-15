@@ -11,29 +11,18 @@
 class Solution {
 public:
     ListNode* removeNodes(ListNode* head) {
-        stack<ListNode*>st;
-        ListNode* temp=head;
-        while(temp!=NULL){
-            st.push(temp);
-            temp=temp->next;
+        if(head==NULL||head->next==NULL){
+            return head;
         }
-        temp=st.top();
-        st.pop();
-        int maxi= temp->val;
-        head = new ListNode(maxi);
-        while(!st.empty()){
-            temp=st.top();
-            st.pop();
-            if(temp->val<maxi){
-                continue;
-            }
-            else{
-                ListNode* newhead= new ListNode(temp->val);
-                newhead->next=head;
-                head=newhead;
-                maxi=temp->val;
-            }
+
+        ListNode* nextt= removeNodes(head->next);
+
+        if(head->val<nextt->val){
+            delete head;
+            return nextt;
         }
+
+        head->next=nextt;
         return head;
     }
 };
