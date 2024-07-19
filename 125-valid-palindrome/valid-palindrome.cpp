@@ -60,11 +60,6 @@ public:
          }
      }
 
-     /* for(int j=0;j<temp.length();j++)
-     {
-       temp[j]=tolower(temp[j]);
-     }
-       */
       return checkpalindrome(temp);
 
         
