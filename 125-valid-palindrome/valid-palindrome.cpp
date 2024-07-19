@@ -6,7 +6,6 @@ bool valid(char ch)
     {
         return 1;
     }
-
     else
     return 0;
 }
@@ -17,7 +16,6 @@ char tolower(char ch)
     {
         return ch;
     }
-
     else{
     char temp= ch-'A'+'a';
     return temp;
@@ -28,30 +26,24 @@ bool checkpalindrome(string a)
 {
     int s=0;
     int e=a.length()-1;
-
     while(s<=e)
     {
         if((a[s])!=(a[e]))
         {
             return 0;
         }
-
         else{
             s++;
             e--;
-        
         }
     }
-
     return 1;
 }
 
 public:
     bool isPalindrome(string s) {
-
      int i=0;
      string temp="";
-
      for(int i=0;i<s.length();i++)
      {
          if(valid(s[i]))
@@ -59,9 +51,6 @@ public:
              temp.push_back(tolower(s[i]));
          }
      }
-
-      return checkpalindrome(temp);
-
-        
+      return checkpalindrome(temp);  
     }
 };
